@@ -2,7 +2,7 @@
 Repository ini berisi 
 bagian dari portofolio saya untuk menunjukkan kemampuan analisis data, terutama dalam penggunaan SQL BigQuery dan visualisasi data menggunakan Google Looker Studio.
 
-Notes: Akan selalu update sesuai dengan tingkat skill dan materi yang telah dikuasin.
+Notes: Akan selalu update sesuai dengan tingkat skill dan materi yang telah dipahami.
 
 ## Alat dan Teknologi
 * Database: BigQuery Public Dataset
@@ -13,7 +13,7 @@ Notes: Akan selalu update sesuai dengan tingkat skill dan materi yang telah diku
 
 ## Struktur
 - project1_kinerja_penjualan
-- 
+
 ## Learning Journey	
 www.github.com/brwibisono/belajar-data-analis
 
