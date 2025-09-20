@@ -35,7 +35,7 @@ Hasil dari analisis SQL saya visualisasikan menggunakan Google Looker Studio aga
 - visual: berisi file unduhan visual dari Google Looker Studio berupa .pdf
 
 ## Visualisasi Google Looker Studio
-https://lookerstudio.google.com/reporting/f03423f6-9c7e-4960-8e4c-87c139fdc110
+https://lookerstudio.google.com/s/hlqiZ1eeD_U
 
 ## Learning Journey	
 www.github.com/brwibisono/belajar-data-analis
