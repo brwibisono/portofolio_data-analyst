@@ -13,7 +13,7 @@ Notes: Akan selalu update sesuai dengan tingkat skill dan materi yang telah dipa
 
 ## Struktur
 - project1_kinerja_penjualan (14/09/2025)
-- project2_demografi_penjualan (20/09/2025)
+- project2_demografis_penjualan (20/09/2025)
 
 ## Learning Journey	
 www.github.com/brwibisono/belajar-data-analis
