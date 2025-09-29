@@ -16,6 +16,9 @@ Notes: Akan selalu update sesuai dengan tingkat skill dan materi yang telah dipa
 - project2_demografis_penjualan (20/09/2025)
 - project3_performa-segmentasi (29/09/2025)
 
+## Sertifikat
+https://bit.ly/brwibisono_sertifikat
+
 ## Learning Journey	
 www.github.com/brwibisono/belajar-data-analis
 
