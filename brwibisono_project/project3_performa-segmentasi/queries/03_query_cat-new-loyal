@@ -1,0 +1,86 @@
+-- brwibisono project 3
+-- Kategori dalam komunitas segmen
+
+WITH mxdate AS (
+  SELECT DATE(MAX(o.created_at)) AS last_date
+  FROM brbelajardata.thelook_copy.orders o
+  WHERE o.status = 'Complete'
+),
+
+rfm_agg AS (
+  SELECT
+    o.user_id AS uid,
+    DATE_DIFF(m.last_date, DATE(MAX(o.created_at)), DAY) AS recency,
+    COUNT(DISTINCT o.order_id) AS frequency,
+    ROUND(SUM(oi.sale_price), 2) AS monetary
+  FROM brbelajardata.thelook_copy.orders o
+  JOIN brbelajardata.thelook_copy.order_items oi 
+    ON o.order_id = oi.order_id
+  CROSS JOIN mxdate m
+  WHERE o.status ='Complete'
+    AND DATE(oi.created_at) BETWEEN '2024-01-01' AND m.last_date
+  GROUP BY o.user_id, m.last_date
+),
+
+rfm_score AS (
+  SELECT
+    uid,
+    recency,
+    frequency,
+    monetary,
+    NTILE(4) OVER (ORDER BY recency ASC) AS r_score,
+    NTILE(4) OVER (ORDER BY frequency DESC) AS f_score,
+    NTILE(4) OVER (ORDER BY monetary DESC) AS m_score
+  FROM rfm_agg
+),
+
+segmentasi AS (
+  SELECT
+    r.uid,
+    CASE
+      WHEN r.r_score = 4 AND r.f_score = 4 AND r.m_score = 4 THEN 'Pelanggan Loyal'
+      WHEN r.r_score >= 3 AND r.f_score >= 3 THEN 'Potensial Loyal'
+      WHEN r.r_score = 1 AND r.f_score = 1 THEN 'Pelanggan Beresiko'
+      WHEN r.r_score = 4 AND r.f_score = 1 THEN 'Pelanggan Baru'
+      ELSE 'Others'
+    END AS segmen_pelanggan
+  FROM rfm_score r
+),
+
+loyal_baru_cust AS (
+  SELECT r.uid, s.segmen_pelanggan
+  FROM rfm_score r
+  JOIN segmentasi s ON r.uid = s.uid
+  WHERE s.segmen_pelanggan IN('Pelanggan Loyal', 'Pelanggan Baru')
+),
+
+fav_cat_loyal_baru AS (
+  SELECT
+    lbc.segmen_pelanggan,
+    p.category AS kategori,
+    SUM(oi.sale_price) AS total_spending
+  FROM loyal_baru_cust lbc
+  JOIN brbelajardata.thelook_copy.orders o 
+    ON lbc.uid = o.user_id
+  JOIN brbelajardata.thelook_copy.order_items oi 
+    ON o.order_id = oi.order_id
+  JOIN brbelajardata.thelook_copy.products p 
+    ON oi.product_id = p.id
+  WHERE o.status = 'Complete'
+  GROUP BY lbc.segmen_pelanggan, p.category
+),
+
+top_cat AS (
+  SELECT
+    segmen_pelanggan,
+    ARRAY_AGG(STRUCT(kategori, total_spending) 
+              ORDER BY total_spending DESC LIMIT 1)[OFFSET(0)] AS top_item
+  FROM fav_cat_loyal_baru
+  GROUP BY segmen_pelanggan
+)
+
+SELECT
+  segmen_pelanggan,
+  top_item.kategori AS category_fav,
+  ROUND(top_item.total_spending,2) AS spending_tertinggi
+FROM top_cat;
