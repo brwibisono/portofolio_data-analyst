@@ -19,6 +19,9 @@ Notes: Akan selalu update sesuai dengan tingkat skill dan materi yang telah dipa
 ## Sertifikat
 https://bit.ly/brwibisono_sertifikat
 
+## Portofolio ETL Python
+https://github.com/brwibisono/etl_python_bigquery
+
 ## Learning Journey	
 www.github.com/brwibisono/belajar-data-analis
 
