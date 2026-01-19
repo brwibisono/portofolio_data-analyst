@@ -1,4 +1,4 @@
-# Project 1 — Customer Behavior & Segmentation
+# Project 1 - Customer Behavior & Segmentation
 
 ## Latar Belakang
 Dalam bisnis e-commerce, tidak semua customer memiliki kontribusi yang sama terhadap pendapatan. Sebagian customer hanya melakukan satu kali transaksi, sementara sebagian kecil lainnya memberikan kontribusi revenue yang signifikan.
