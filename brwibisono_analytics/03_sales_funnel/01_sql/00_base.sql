@@ -7,7 +7,7 @@ WITH base_funnel AS (
   LEFT JOIN brwibisono.raw_thelook.orders o
     ON u.id = o.user_id
   LEFT JOIN brwibisono.raw_thelook.order_items oi
-    USING(order_id)
+    ON o.order_id = oi.order_id
 )
 
 SELECT * FROM base_funnel;
