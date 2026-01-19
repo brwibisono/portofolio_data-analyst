@@ -1,42 +1,39 @@
-# Project 1 — Customer Behavior & Segmentation Analysis
+# Project 1 — Customer Behavior & Segmentation
 
 ## Latar Belakang
-Dalam bisnis e-commerce, tidak semua customer memiliki nilai yang sama. Sebagian customer hanya melakukan satu kali transaksi, sementara sebagian kecil lainnya memberikan kontribusi besar terhadap total pendapatan.
+Dalam bisnis e-commerce, tidak semua customer memiliki kontribusi yang sama terhadap pendapatan. Sebagian customer hanya melakukan satu kali transaksi, sementara sebagian kecil lainnya memberikan kontribusi revenue yang signifikan.
 
-Project ini bertujuan untuk memahami **perilaku belanja customer** dan melakukan **segmentasi customer berdasarkan nilai transaksi**, sehingga hasil analisis dapat digunakan untuk mendukung strategi marketing dan retensi customer.
+Project ini berfokus pada analisis perilaku customer dan segmentasi berdasarkan nilai transaksi untuk mendukung strategi retensi dan marketing yang lebih efektif.
 
 ---
 
 ## Tujuan Analisis
-1. Mengetahui jumlah customer aktif dan customer repeat
-2. Mengukur kontribusi revenue dari masing-masing customer
+1. Mengidentifikasi jumlah customer aktif dan repeat customer
+2. Mengukur kontribusi revenue per customer
 3. Melakukan segmentasi customer berdasarkan nilai transaksi
-4. Memberikan insight dan rekomendasi bisnis berbasis data
+4. Memberikan insight bisnis berbasis data
 
 ---
 
-## Dataset
-Dataset yang digunakan adalah dataset publik **thelook_ecommerce** yang telah disalin ke project BigQuery pribadi untuk keperluan analisis.
+## Dataset & Scope
+Dataset yang digunakan berasal dari **thelook_ecommerce** yang telah melalui tahap persiapan dan validasi pada folder `00_setup`.
 
 ### Tabel yang Digunakan
-| Tabel | Deskripsi |
-|------|---------|
-| users | Data identitas customer |
-| orders | Data transaksi pemesanan |
-| order_items | Detail item dan nilai transaksi |
+- `users`
+- `orders`
+- `order_items`
+
+Objek analisis utama pada project ini adalah **customer (user_id)**.
 
 ---
 
 ## Pendekatan Analisis
-Analisis dilakukan dengan pendekatan **end-to-end data analysis**, yang mencakup:
-
-1. Identifikasi kebutuhan bisnis
-2. Pengumpulan data relevan
-3. Validasi kualitas data
-4. Agregasi data ke level customer
-5. Perhitungan metrik utama
-6. Segmentasi customer
-7. Penyusunan insight dan rekomendasi
+Analisis dilakukan melalui tahapan berikut:
+1. Validasi relasi antar tabel
+2. Agregasi data ke level customer
+3. Perhitungan metrik utama
+4. Segmentasi customer
+5. Interpretasi hasil
 
 ---
 
@@ -51,17 +48,16 @@ Beberapa metrik utama yang digunakan dalam analisis ini:
 ---
 
 ## Segmentasi Customer
-Customer dikelompokkan berdasarkan total nilai transaksi menjadi:
+Customer dikelompokkan berdasarkan total nilai transaksi:
 - **High Value Customer**
 - **Medium Value Customer**
 - **Low Value Customer**
 
-Segmentasi ini digunakan untuk memahami kontribusi masing-masing kelompok terhadap pendapatan perusahaan.
+Segmentasi ini digunakan untuk memahami distribusi nilai customer dan kontribusinya terhadap total revenue.
 
 ---
 
 ## Insight Utama
-Beberapa insight yang dihasilkan dari analisis ini:
 - Mayoritas customer hanya melakukan satu kali transaksi
 - Sebagian kecil customer memberikan kontribusi revenue terbesar
 - Tingkat repeat customer masih relatif rendah
@@ -69,7 +65,6 @@ Beberapa insight yang dihasilkan dari analisis ini:
 ---
 
 ## Rekomendasi Bisnis
-Berdasarkan hasil analisis, rekomendasi yang dapat diberikan antara lain:
 - Program retensi untuk meningkatkan repeat order
 - Loyalty program untuk customer bernilai tinggi
 - Strategi bundling atau promo untuk customer bernilai rendah
@@ -77,21 +72,15 @@ Berdasarkan hasil analisis, rekomendasi yang dapat diberikan antara lain:
 ---
 
 ## Output
-- Tabel agregasi customer di BigQuery
-- Query SQL untuk analisis dan segmentasi
+- Query SQL agregasi customer
+- Tabel metrik customer
 - Insight dan rekomendasi berbasis data
-- (Opsional) Dashboard visualisasi menggunakan Tableau
-
----
-
-## Tools & Teknologi
-- Google BigQuery (SQL)
-- Tableau untuk visualisasi data
+- (Opsional) Dashboard visualisasi
 
 ---
 
 ## Catatan
-Project ini disusun sebagai bagian dari portofolio Data Analyst dan menekankan pada pendekatan analitis, validasi data, serta penyampaian insight bisnis yang jelas.
+Project ini menjadi dasar pemahaman perilaku customer yang akan digunakan sebagai referensi pada project analisis lanjutan.
 
 ---
 
