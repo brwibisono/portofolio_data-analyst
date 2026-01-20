@@ -90,7 +90,7 @@ Pendekatan ini menekankan **ketepatan analisis dan relevansi bisnis**, bukan sek
 
 ---
 
-## Tools & Teknologi
+## Alat & Teknologi
 - SQL: Google BigQuery
 - Dataset: bigquery-public-data.thelook_ecommerce
 - Visualisasi: Tableau
