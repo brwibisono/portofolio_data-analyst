@@ -1,91 +1,79 @@
-# E-commerce Data Analysis
-**Dataset: thelook_ecommerce**
+# 📊 E-commerce Data Analyst Portfolio  
+**Dataset: thelook_ecommerce (BigQuery Public Dataset)**
 
-## Deskripsi Proyek
-Repository ini berisi kumpulan project **data analysis** menggunakan dataset publik **thelook_ecommerce**.  
-Setiap project dirancang untuk merepresentasikan **kasus bisnis nyata di perusahaan e-commerce**, mulai dari identifikasi masalah bisnis, pengolahan data, analisis, hingga penyusunan insight dan rekomendasi.
+Repository ini berisi rangkaian project **end-to-end data analysis** menggunakan dataset publik **thelook_ecommerce**.  
+Project disusun untuk merepresentasikan **kasus bisnis nyata di perusahaan e-commerce**, mulai dari pemahaman masalah bisnis, pengolahan data dengan SQL, hingga penyajian insight melalui dashboard Tableau.
 
-Proyek-proyek di dalam repository ini disusun sebagai bagian dari:
-- Portofolio Data Analyst
-- Latihan analisis bisnis berbasis data
+📄 **Executive summary singkat tersedia dalam `Portofolio.pdf`** (untuk reviewer non-teknis).
 
 ---
 
-## Tujuan Utama
-Tujuan utama dari repository ini adalah untuk menunjukkan kemampuan dalam:
-1. Memahami kebutuhan bisnis dan menerjemahkannya ke analisis data
-2. Mengelola dan memvalidasi data dengan SQL (BigQuery)
-3. Menghasilkan metrik dan KPI yang relevan
-4. Menyampaikan insight bisnis secara terstruktur
-5. Menghubungkan hasil analisis dengan rekomendasi bisnis yang dapat ditindaklanjuti
+## 🎯 Tujuan Portfolio
+
+Portfolio ini bertujuan untuk menunjukkan kemampuan sebagai **Data Analyst**, khususnya dalam:
+- Menerjemahkan kebutuhan bisnis ke dalam analisis data
+- Mengelola dan memvalidasi data menggunakan **SQL (BigQuery)**
+- Menghasilkan metrik dan KPI yang relevan
+- Menyusun insight berbasis data yang dapat ditindaklanjuti
+- Menyajikan hasil analisis melalui visualisasi yang jelas dan komunikatif
 
 ---
 
-## Dataset
-Dataset yang digunakan adalah **thelook_ecommerce**, sebuah dataset publik yang mensimulasikan data transaksi e-commerce, meliputi informasi:
-- Customer
-- Produk
-- Transaksi
-- Perilaku pembelian
+## 🗂️ Struktur Repository
 
-Dataset publik tersebut disalin ke project BigQuery pribadi untuk memastikan konsistensi dan reproducibility analisis.
-
----
-
-## Validasi Data
-Sebelum melakukan analisis, dilakukan validasi data untuk memastikan kualitas data, antara lain:
-- Memastikan tidak ada order tanpa item
-- Mengidentifikasi customer yang belum pernah melakukan transaksi
-
-Validasi ini penting agar hasil analisis tidak bias akibat data yang tidak lengkap.
-
----
-
-## Struktur Repository
 ```
-├── 00_setup/                       # Duplikasi dan validasi dataset
-├── 01_customer_behavior/           # Analisa perilaku customer
-├── 02_product_performance/         # Evaluasi performa product
-├── 03_sales_funnel/                # Analisis funnel penjualan
-├── 04_time_series/                 # Analisa tren penjualan
-├── 05_cohort_retention/            # Analisa cohort customer
+├── 00_setup/                       # Duplikasi & validasi dataset
+├── 01_customer_behavior/           # Analisis perilaku & segmentasi customer
+├── 02_product_performance/         # Analisis performa produk
+├── 03_sales_funnel/                # Funnel & conversion analysis
+├── 04_time_series/                 # Tren & seasonality analysis
+├── 05_cohort_retention/            # Cohort & retention analysis
 └── README.md
 ```
-
----
 
 Folder project berisi:
 - Query SQL
 - Visual
-- Pendekatan analisis
-- Insight utama
+- Media (tangkapan layar running sql)
 
 ---
 
-## Daftar Project
+## 📌 Ringkasan Project
 
-### Project 1 — Customer Behavior & Segmentation
-Analisis perilaku customer dan segmentasi berdasarkan nilai transaksi untuk memahami customer bernilai tinggi dan peluang retensi.
+---
+
+### Project 1 — Customer Behavior Analysis
+
+Analisis karakteristik customer, segmentasi nilai transaksi, serta perilaku repeat purchase.
+🎯 Tujuan bisnis: memahami kualitas customer base dan potensi retensi.
 
 ---
 
 ### Project 2 — Product Performance Analysis
-Evaluasi performa produk berdasarkan penjualan dan revenue untuk mendukung keputusan inventory dan pricing.
+
+Evaluasi performa produk berdasarkan revenue, kontribusi penjualan, dan identifikasi hero product.
+🎯 Tujuan bisnis: fokus pada produk dengan dampak revenue terbesar.
 
 ---
 
-### Project 3 — Sales Funnel & Conversion Analysis
-Analisis funnel penjualan untuk mengidentifikasi titik drop-off dan peluang peningkatan konversi.
+### Project 3 — Sales Funnel Analysis
+
+Analisis konversi dari user terdaftar hingga paid order untuk mengidentifikasi titik drop-off.
+🎯 Tujuan bisnis: menemukan peluang peningkatan konversi.
 
 ---
 
-### Project 4 — Time Series & Seasonality Analysis
-Analisis tren penjualan berdasarkan waktu untuk memahami pola musiman dan mendukung perencanaan campaign.
+### Project 4 — Time Series Analysis
+
+Analisis tren order, revenue, dan AOV untuk memahami pertumbuhan dan pola musiman.
+🎯 Tujuan bisnis: mendukung perencanaan campaign dan forecasting.
 
 ---
 
-### Project 5 — Cohort Retention Analysis
-Analisis cohort customer untuk mengukur retensi dan kualitas akuisisi customer dari waktu ke waktu.
+### Project 5 — Cohort & Retention Analysis
+
+Analisis cohort customer berbasis bulan pembelian pertama untuk mengukur retensi dan loyalitas.
+🎯 Tujuan bisnis: mengevaluasi kualitas akuisisi customer jangka panjang.
 
 ---
 
@@ -103,8 +91,9 @@ Pendekatan ini menekankan **ketepatan analisis dan relevansi bisnis**, bukan sek
 ---
 
 ## Tools & Teknologi
-- Google BigQuery (SQL)
-- Tableau (visualisasi dan dashboard)
+- SQL: Google BigQuery
+- Dataset: bigquery-public-data.thelook_ecommerce
+- Visualisasi: Tableau
 
 ---
 
@@ -114,10 +103,10 @@ Setiap project berdiri sendiri namun saling melengkapi untuk memberikan gambaran
 
 ---
 
-## 📬 Contact
+## ✍️ Author
+**Bramantya Wibisono**
 
-For questions, feedback, or collaboration opportunities,  
-feel free to reach out:
+Portofolio Data Analyst — SQL (BigQuery) & Tableau
 
 📧 **br.wibisono@gmail.com**
 
